@@ -1,0 +1,111 @@
+*{
+    font-family: 'Roboto', sans-serif;
+
+}
+body{
+    background-color: #F1BA88;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 80px auto;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    width: 90%;
+}
+.container .formContainer{
+    width: 60%;
+}
+.container .formContainer form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+background-color: #E9F5BE;
+padding: 50px;
+
+
+}
+.container .formContainer form input{
+    margin: 10px;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    
+    width: 100%;
+    
+}
+.container .formContainer form button{
+    background-color:#F1BA88;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    margin-top: 30px;
+    font-weight: 600;
+  width: 70%;
+
+
+}
+.container .formContainer form #signup{
+    margin: 10px;
+    border: none;
+    background-color: transparent;
+     font-size: 20px;
+    background-color: #ddd;
+    margin-top: 40px;
+    width: 50%;
+}
+.container .formContainer form #login{
+    margin: 10px;
+    border: none;
+    background-color: transparent;
+     font-size: 20px;
+    background-color: #ddd;
+    margin-top: 40px;
+    width: 50%;
+}
+@media (max-width: 600px) {
+.container{
+    margin: 20px auto;
+        
+      }
+  
+    .formTitle h2{
+     
+      margin-bottom: 10px;
+       }
+  
+.container .formContainer{
+       width: 100%;
+      }
+  
+      .container .formContainer form{
+      padding: 30px;
+    }
+  
+    .container .formContainer form input{
+      font-size: 18px;
+     
+    }
+  
+     .container .formContainer form button{
+      width: 100%;
+      font-size: 20px;
+       padding: 12px;
+    margin-top: 15px;
+      }
+    .container .formContainer form #signup{
+          width: 60%;
+         font-size: 15px;
+         margin-top: 15px; 
+    }
+    .container .formContainer form #login{
+        width: 60%;
+       font-size: 15px;
+       margin-top: 15px; 
+  }
+  }
