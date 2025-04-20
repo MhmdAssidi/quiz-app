@@ -24,7 +24,9 @@ $_SESSION['id']=$user['id'];
     if ($user) {
          if(password_verify($password,$user['password'])){
         $_SESSION["loggedIn"] = true;
-        $_SESSION['userName'] = $user['email'];
+        $_SESSION['userName'] = $user['name'];
+        $_SESSION['user_id'] = $user['id'];
+
        if($user['email']=="admin@quiz.com"){
         header("Location: ../pages/dashboard.php");
        }

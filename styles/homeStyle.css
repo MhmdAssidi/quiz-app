@@ -1,0 +1,53 @@
+*{
+    font-family: 'Roboto', sans-serif;
+
+}
+body{
+    background-color: #F1BA88;
+
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+    font-size: 25px;
+    font-weight: 500;
+    width: 100%;
+}
+.container .card{
+    width: 28%;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    background-color: #E9F5BE;
+    max-width: 300px; 
+    min-width: 250px; 
+}
+.container .card h3{
+    font-size: 35px;
+}
+
+.container .card button{
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;    
+}
+
+@media (max-width: 600px) {
+    .container{
+    font-size: 20px;
+    }
+    .container .card h3{
+        font-size: 25px;
+    }
+.container .card button{
+    font-size: 12px;
+
+}
+}

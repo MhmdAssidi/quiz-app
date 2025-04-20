@@ -45,8 +45,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             $stmt->execute();
             $_SESSION['success'] ='you register correctly, login now';
-         
-
             header("Location:../pages/index.php");
             exit(); 
         } catch(PDOException $exc) {  
