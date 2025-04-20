@@ -1,0 +1,36 @@
+*{
+    font-family: 'Roboto', sans-serif;
+
+}
+body{
+    background-color: #F1BA88;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-size: 25px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.container .optionContainer{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+}
+
+.container .submitBtn{
+    padding: 12px 25px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;    
+}

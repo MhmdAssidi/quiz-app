@@ -14,7 +14,7 @@ if (empty($email)||empty($password)) {
 try {
    
     $sql = "SELECT id,name,email, password FROM users WHERE email = :email";
-    $stmt = $pdo->prepare($sql);
+    $stmt =$pdo->prepare($sql);
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
