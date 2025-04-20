@@ -6,7 +6,8 @@ if(!isset($_SESSION['loggedIn'])){
     header("Location: ./index.php"); 
     exit();
 }
-$quizId=$_GET['id'];
+$quizId = $_GET['id'];
+
 
 $sql="SELECT * FROM questions WHERE quiz_id=:quiz_id";
     $stmt =$pdo->prepare($sql);
@@ -27,26 +28,31 @@ $sql="SELECT * FROM questions WHERE quiz_id=:quiz_id";
 </head>
 <body>
     <div class="container">
-    <form action="submit_quiz.php" method="POST">
+    <form action="../actions/scoreAction.php" method="POST">
    <?php foreach ($questions as $question): ?>
     <h3><?php echo $question['question'] ?></h3>
    
     <div class="optionContainer">
         <div class="options">
-    <input type="radio" name="question_<?php echo $question['id'];  ?>" value="<?php echo $question['option_a'];  ?>"> <label><?php echo $question['option_a'];  ?> </label>
+        <input type="hidden" name="question_ids[]" value="<?php echo $question['id']; ?>">
+
+    <input type="radio" name="question_<?php echo $question['id'];?>" value="a" required> <label><?php echo $question['option_a'];  ?> </label>
         </div>
         <div class="options">
     
-        <input type="radio" name="question_<?php echo $question['id'];  ?>" value="<?php echo $question['option_b'];  ?>"> <label><?php echo $question['option_b'];  ?> </label>
+        <input type="radio" name="question_<?php echo $question['id'];  ?>" value="b" required> <label><?php echo $question['option_b'];  ?> </label>
         </div>
         <div class="options">
 
-        <input type="radio" name="question_<?php echo $question['id'];  ?>" value="<?php echo $question['option_c'];  ?>"> <label><?php echo $question['option_c'];  ?> </label>
+        <input type="radio" name="question_<?php echo $question['id'];  ?>" value="c" required> <label><?php echo $question['option_c'];  ?> </label>
         </div>   
 </div>
    <?php endforeach; ?>
-   <button type="submit" class="submitBtn">Submit Quiz</button>
+   <input type="hidden" name="quizId" value="<?php echo $quizId  ?>">
+
+<button type="submit" class="submitBtn">Submit Quiz</button>
    </form>
     </div>
+    
 </body>
 </html>
