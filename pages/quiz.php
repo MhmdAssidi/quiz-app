@@ -6,7 +6,13 @@ if(!isset($_SESSION['loggedIn'])){
     header("Location: ./index.php"); 
     exit();
 }
-$quizId = $_GET['id'];
+
+
+$userId=$_SESSION['user_id'];
+
+
+$quizId =$_GET['id'];
+
 
 
 $sql="SELECT * FROM questions WHERE quiz_id=:quiz_id";

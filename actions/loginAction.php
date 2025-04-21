@@ -4,9 +4,9 @@ session_start();
 require "./connection.php";
 
 $email=trim($_POST['email']);
-$password=trim($_POST['password']);
+$pass=trim($_POST['password']);
 
-if (empty($email)||empty($password)) {
+if (empty($email)|| empty($pass)) {
     echo "Missing parameter";
     exit; 
 }
@@ -22,11 +22,13 @@ try {
 $_SESSION['id']=$user['id'];
   
     if ($user) {
-         if(password_verify($password,$user['password'])){
+         if(password_verify($pass,$user['password'])){
         $_SESSION["loggedIn"] = true;
         $_SESSION['userName'] = $user['name'];
         $_SESSION['user_id'] = $user['id'];
-
+        $_SESSION['email']=$user['email'];
+        $_SESSION['password']=$pass;
+            
        if($user['email']=="admin@quiz.com"){
         header("Location: ../pages/dashboard.php");
        }
