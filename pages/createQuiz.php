@@ -16,7 +16,16 @@ if(!isset($_SESSION['loggedIn'])){
 <body>
     
 <form action="../actions/createQuizAction.php" method="POST">
-
+<?php 
+if (isset($_SESSION['error'])){
+    echo '<div> <p style="color:red; font-size:30px;">' . $_SESSION['error'] . '</p></div>';
+    unset($_SESSION['error']); 
+}
+if (isset($_SESSION['success'])){
+  echo '<div> <p style="color:green; font-size:30px;">' . $_SESSION['success'] . '</p> </div>';
+  unset($_SESSION['success']); 
+}
+?>
 <div>
     <label>Enter a title for the quiz: </label> <input type="text" placeholder="title" name="title">
     <label>Enter the description for the quiz: </label> <input type="text" placeholder="title" name="desc">
@@ -49,16 +58,7 @@ endfor;
 <div>
     <button type="submit">Create</button>
 </div>
-<?php 
-if (isset($_SESSION['error'])){
-    echo '<div> <p style="color:red; font-size:30px;">' . $_SESSION['error'] . '</p></div>';
-    unset($_SESSION['error']); 
-}
-if (isset($_SESSION['success'])){
-  echo '<div> <p style="color:green; font-size:30px;">' . $_SESSION['success'] . '</p> </div>';
-  unset($_SESSION['success']); 
-}
-?>
+
 </form>
 </body>
 </html>

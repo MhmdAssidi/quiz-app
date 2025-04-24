@@ -24,6 +24,7 @@ body{
     background-color: #E9F5BE;
     max-width: 300px; 
     min-width: 250px; 
+    position: relative;
 }
 .container .card h3{
     font-size: 35px;
@@ -51,3 +52,5 @@ body{
 
 }
 }
+
+
