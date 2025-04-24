@@ -9,8 +9,6 @@ body{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    /* justify-content: center;
-    text-align: left; */
     font-size: 25px;
     font-weight: 500;
     width: 100%;
@@ -44,6 +42,17 @@ font-size: 25px;
 color: #2b2006;
 font-size: 17px;
 }
+
+.createQuiz a{
+    padding: 12px 25px;
+margin-top: 20px;
+font-size: 16px;
+font-weight: 600;
+text-transform: uppercase;
+border-radius: 50px;
+border: none;
+cursor: pointer;   
+}
 @media (max-width: 600px) {
 
     .container .eachUser p{
@@ -62,3 +71,5 @@ font-size: 17px;
                 font-size: 15px;
             }
     }
+
+     

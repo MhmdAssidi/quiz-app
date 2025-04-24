@@ -47,5 +47,7 @@ $stmt =$pdo->prepare($sql);
     </div>
    <?php endforeach; ?>
   </div>
+
+  <button class="createQuiz"><a href="./createQuiz.php">Create a quiz</a></button>
 </body>
 </html>

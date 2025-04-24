@@ -8,6 +8,9 @@ if(!isset($_SESSION['loggedIn'])){
     header("Location: ./index.php"); 
     exit();
 }
+if($_SERVER['REQUEST_METHOD']=="GET"){
+    die("do a quiz first");
+}
 $userId=$_SESSION['user_id'];
 $quizId=$_SESSION['quizId'];
 $score=$_SESSION['score'];

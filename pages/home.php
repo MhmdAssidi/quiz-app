@@ -26,6 +26,7 @@ $quizzes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <h1>Welcome <?php echo $userName ?></h1>
 <div class="container">
+    
     <?php
     foreach($quizzes as $quiz):
     ?>
@@ -37,5 +38,6 @@ $quizzes = $stmt->fetchAll(PDO::FETCH_ASSOC);
    <?php endforeach; ?>
    </div>
 
+   
 </body>
 </html>
