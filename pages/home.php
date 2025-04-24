@@ -8,6 +8,9 @@ if(!isset($_SESSION['loggedIn'])){
 }
 $userName=$_SESSION['userName'];
 
+$userEmail=$_SESSION['email'];
+$userPass=$_SESSION['password'];
+            
 $sql="SELECT * FROM quizzes";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
@@ -33,11 +36,26 @@ $quizzes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="card">
          <h3><?php echo $quiz['title'];?></h3>
          <p><?php echo $quiz['description'];?></p>   
-         <a href="./quiz.php?id=<?php echo $quiz['id'];?>"><button>take quiz</button></a>
+         <?php
+         if($userEmail=="admin@quiz.com"):?>
+         <a href="./quiz.php?id=<?php echo $quiz['id'];?>"><button>see questions</button></a>
+         <a href="./editQuiz.php?id=<?php echo $quiz['id'];?>"><button>edit quiz</button></a>
+         <?php else: ?>
+         <a href="./quiz.php?id=<?php echo $quiz['id'];?>"><button>solve quiz</button></a>
+         <?php endif; ?>
         </div>
    <?php endforeach; ?>
    </div>
-
+   <?php 
+if (isset($_SESSION['error'])){
+    echo '<div> <p style="color:red; font-size:30px;">' . $_SESSION['error'] . '</p></div>';
+    unset($_SESSION['error']); 
+}
+if (isset($_SESSION['success'])){
+  echo '<div> <p style="color:green; font-size:30px;">' . $_SESSION['success'] . '</p> </div>';
+  unset($_SESSION['success']); 
+}
+?>
    
 </body>
 </html>

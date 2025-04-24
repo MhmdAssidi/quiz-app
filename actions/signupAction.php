@@ -13,6 +13,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         header("Location:../pages/index.php");
         exit;
     }
+    if($email=="admin@quiz.com"){
+        $_SESSION['error']='choose another email';
+        header("Location:../pages/index.php");
+        exit;
+    }
     else{
         try{
          

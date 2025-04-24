@@ -1,13 +1,10 @@
 <?php
 
 
-require "../actions/connection.php";
+require "./connection.php";
 
 session_start();
-if(!isset($_SESSION['loggedIn'])){
-    header("Location: ../pages/index.php"); 
-    exit;
-}
+
 if($_SERVER['REQUEST_METHOD'] != 'POST'){ 
     die("you should submit the form of creation a quiz");
     exit;

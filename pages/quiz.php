@@ -13,7 +13,8 @@ $userId=$_SESSION['user_id'];
 
 $quizId =$_GET['id'];
 
-
+$userEmail=$_SESSION['email'];
+$userPass=$_SESSION['password'];
 
 $sql="SELECT * FROM questions WHERE quiz_id=:quiz_id";
     $stmt =$pdo->prepare($sql);
@@ -56,7 +57,10 @@ $sql="SELECT * FROM questions WHERE quiz_id=:quiz_id";
    <?php endforeach; ?>
    <input type="hidden" name="quizId" value="<?php echo $quizId  ?>">
 
+   <?php if($userEmail!="admin@quiz.com"): ?>
 <button type="submit" class="submitBtn">Submit Quiz</button>
+<?php endif; ?>
+
    </form>
     </div>
     
