@@ -6,8 +6,8 @@ $quizId =$_POST['quizId'];
 
 
 if($quizId){
-    $title = $_POST['title'];
-    $description = $_POST['desc'];
+  $title = trim($_POST['title']);
+  $description = trim($_POST['desc']);
 
     $question1=trim($_POST['question1']);
     $option1Q1=trim($_POST['option1Q1']);
@@ -31,10 +31,13 @@ if($quizId){
     $questionId2=$_POST['questionId2'];
     $questionId3=$_POST['questionId3'];
 
-$sqlQuiz="UPDATE questions SET title=:title and description=:description";
-$sqlQuiz = $pdo->prepare($sql);
-$stmt1->bindParam(":title", $title);
-$stmt1->bindParam(":description", $description);
+$sqlQuiz="UPDATE quizzes SET title=:title,description=:description WHERE id=:quizId";
+$stmtq = $pdo->prepare($sqlQuiz);
+$stmtq->bindParam(":title", $title);
+$stmtq->bindParam(":description", $description);
+$stmtq->bindParam(":quizId", $quizId);
+
+$stmtq->execute();
 
 $sql = "UPDATE questions SET 
                     question = :question,

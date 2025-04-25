@@ -17,11 +17,15 @@ form{
 }
 
 form div{
-    display: flex;
+    
+        display: flex;
         flex-direction: column;
-        background-color: #E9F5BE;
+        /* background-color: #E9F5BE; */
         margin-bottom: 35px;
-        padding: 20px auto;
+        padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
         font-weight: 600;
         width: 90%;
         min-width: 320px;

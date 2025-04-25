@@ -69,7 +69,7 @@ foreach ($quizAnditsQuestions as $row):  ?>
     endforeach;
     ?>
 
-<div>
+<div style="width: 30%; background-color:transparent">
 <button type="submit">EDIT</button>
 </div>
 

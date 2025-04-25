@@ -55,7 +55,7 @@ for ($i = 1; $i <= 3;$i++): ?>
 endfor;
 ?>
 
-<div>
+<div style="width: 30%; background-color:transparent">
     <button type="submit">Create</button>
 </div>
 
