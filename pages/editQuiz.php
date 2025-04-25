@@ -30,6 +30,8 @@ $firstRow = $quizAnditsQuestions[0];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                
     <link rel="stylesheet" href="../styles/createQuizStyle.css">
 </head>
 <body>
@@ -47,7 +49,7 @@ $firstRow = $quizAnditsQuestions[0];
 $current=1;
 foreach ($quizAnditsQuestions as $row):  ?>
 
-<div>
+<div style="position: relative;">
 <input type="hidden" name="questionId<?php echo $current ?>" value="<?php echo $row['question_id'] ?>">
 
     <label>Enter the question <?php echo $current ?> for the quiz: </label><input type="text" placeholder="title" name="question<?php echo $current  ?>" value="<?php echo $row['question']  ?>" required>
@@ -55,7 +57,12 @@ foreach ($quizAnditsQuestions as $row):  ?>
     <label>Enter the option 2 for the question: </label><input type="text" placeholder="option" name="option2Q<?php echo $current  ?>" value="<?php echo $row['option_b']  ?>" required>
     <label>Enter the option 3 for the question:</label><input type="text" placeholder="Enter option C" name="option3Q<?php echo $current  ?>" value="<?php echo $row['option_c']  ?>" required>
     <label>Enter the correct option for the question <?php echo $current ?> as a or b or c: </label><input type="text" placeholder="correct option" name="correct<?php echo $current  ?>" value="<?php echo $row['correct_option']  ?>" required>
-
+    <i class="fa fa-trash-o" onclick="confirmDelete(<?php echo $row['question_id']; ?>, <?php echo $quizId; ?>)" style="
+         font-size: 23px; 
+    color: red;
+    position: absolute;
+    right:5%;
+    cursor:pointer;"></i>
 </div>
  <?php
         $current++;
@@ -67,5 +74,15 @@ foreach ($quizAnditsQuestions as $row):  ?>
 </div>
 
 </form>
+
+<script>
+    function confirmDelete(questionId,quizId){
+        var confirmed=confirm("Are you sure you want to delete this question?");
+    
+    if (confirmed){
+        window.location.href = "../actions/deleteQuestionAction.php?question_id=" + questionId + "&quiz_id=" + quizId;
+    }
+    }
+    </script>
 </body>
 </html>

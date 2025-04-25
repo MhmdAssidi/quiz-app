@@ -12,20 +12,20 @@ form{
     align-items: center;
     font-size: 25px;
     font-weight: 500;
-    width: 90%;
+    width: 100%;
 
 }
 
 form div{
     display: flex;
-    flex-direction: column;
-    background-color: #E9F5BE;;
-    margin-bottom: 20px;
-    padding: 30px;
-    font-weight: 600;
-    width: 50%;
-    max-width: 500px; 
-    min-width: 250px; 
+        flex-direction: column;
+        background-color: #E9F5BE;
+        margin-bottom: 35px;
+        padding: 20px auto;
+        font-weight: 600;
+        width: 90%;
+        min-width: 320px;
+        font-size: 16px;
 }
 
 form button{
@@ -57,10 +57,11 @@ form input{
 form input{
 font-size: 13px;
 }
-form input label{
+ label{
     font-size: 13px;
 }
 form button{
 font-size: 13px;
 }
 }
+
